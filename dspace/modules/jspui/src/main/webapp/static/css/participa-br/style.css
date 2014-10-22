@@ -1,223 +1,251 @@
-/*
- *
- * CSS com estilos específicos do tema verde
- *
- * @Autores
- *
- * - Simples Consultoria - www.simplesconsultoria.com.br
- * - DESERTO Digital - www.desertodigital.com.br
- *
- * @Referencias
- *
- * Lista de padrões, convenções e boas praticas CSS que devem ser seguidas.
- * https: //github.com/necolas/idiomatic-css/tree/master/translations/pt-BR
- *
- * Plugins para ordenar os atributos de CSS.
- * http://csscomb.com/
- *
- * Validador de CSS do W3C.
- * http://jigsaw.w3.org/css-validator/
- */
-
-
-/* ==========================================================================
-   Cabeçalho do portal
-   ========================================================================== */
-
-#header {
-	padding: 13px 0 0 0;
-background-color: #fcdd4e;/*(amarelo-claro)*/
- /* Old browsers */
-	background-color: #f9c404; /*(amarelo-escuro)*/
-	background-image: -moz-radial-gradient(center, ellipse cover,  #fcdd4e 1%, #f9c404 100%); /*(amarelo-claro)(amarelo-escuro)*/
- /* FF3.6+ */
-	background-image: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(1%,#fcdd4e), color-stop(100%,#f9c404));
- /* Chrome,Safari4+ */
-	background-image: -webkit-radial-gradient(center, ellipse cover,  #fcdd4e 1%,#f9c404 100%);
- /* Chrome10+,Safari5.1+ */
-	background-image: -o-radial-gradient(center, ellipse cover,  #fcdd4e 1%,#f9c404 100%);
- /* Opera 12+ */
-	background-image: -ms-radial-gradient(center, ellipse cover,  #fcdd4e 1%,#f9c404 100%);
- /* IE10+ */
-	background-image: radial-gradient(ellipse at center,  #fcdd4e 1%,#f9c404 100%);
- /* W3C */
-/*	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcdd4e', endColorstr='#f9c404',GradientType=1 );*/
- /* IE6-9 fallback on horizontal gradient */
-	color: #fff;
+#header-banner {
+	font-family: "open_sansregular",Arial,Helvetica,sans-serif;
+    font-size: 1.2em;
+    margin: 0 auto;
+    width: 100%;
 }
 
-/* Menu de Acessibilidade
-   ========================================================================== */
+
+#header-banner * {
+    vertical-align: middle;
+    list-style: none outside none;
+    padding: 0;
+    vertical-align: middle;
+    box-sizing: border-box;
+}
+
+#header {
+    color: #fff;
+}
+
+/******************************************************************************************
+ * Folhas de estilo aplicáveis à barra do brasil
+ ******************************************************************************************/
+#barra-brasil {
+    background: none repeat scroll 0 0 #f1f1f1;
+    font-family: "Open Sans",Arial,Helvetica,sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    height: 32px;
+    line-height: 32px;
+}
+
+div#wrapper-barra-brasil {
+    height: 32px;
+    margin: 0 auto;
+    max-width: 960px;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+}
+
+#barra-brasil div, #barra-brasil a, #barra-brasil ul, #barra-brasil li {
+    border: 0 none;
+    font-family: inherit;
+    font-size: 100%;
+    padding: 0;
+    vertical-align: baseline;
+}
+
+#barra-brasil .brasil-flag .link-barra {
+    background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAATCAIAAAABJ4pRAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAABINJREFUeNqUVFtsFFUYPrfdmdnLbLe021baQqWUtdJKL5QiASPiNVqC0TYqUWLShJQmRH3RqPHFRKJvQqIPQNSAAcMDptGEiKjYpLZIkSqGXqjdFlppd3vb7c7Ozpxz/M+2wZD44snszOzJnP//vv///g9XnNiXtNISI1gYq4eUEu4CC7SyiLpJgtSOIJKg/1ySB3x+NmsvJLNpgVUwlAu08iIkzi2pUhHIAa/q1L9p7l6YWmmHEOSBWJD6LixwJ7DDAKR06c6imQOVYxoRyEV4BR3JBYfvqNqBtILrSGNEKgoCsVxWDMmxgAOADeDjQsP+oHbo1egk7B+Mju/vq7kwVYhohsAxoiogiIM5hBaSUIBFfS21WRcOSwUHOwgTqoJR+O0pv31u56XmUKrvt4o/RyNrjVRHw40iLdU9Hck4DPBQxOQKK/XQqQa7nGNb8UICSUoE4y4rCyweqh164b7Jk12N737x2NjtfMAeCDit268e7jj7yOqfX++p+ebvQk5coAB8BQIMroqaf7xt3p4TUATgxj0Y0wOVN96uHomE3I+Ob37zSJvUHURshjySIZ4JPLhp+IcPj3h1eSZ2zxu/R8cXDeThuSLJkGZSY/fGjGOrenG9xlz8vPnK/g0xEwprl52PH9ryUGRLk1lfXWqGCcE0lUqOjxeHVy01141V+5Mvlk+lOLmcAOwC6OpMo8FnqlOCh2j2taqRE1sHKk2LuFJq6NveumNd9f0Dt2IjC1aGVKwzdz1cUryaxSasW9Oo/dFfoaEB6jxdOl2Xt3BtwYw7Xh/VmQNNcNHj5fH3N40CQgnNAAUQMjgh+y/dpIblN9j14fHuHqEFvPUP5L3Svp4mHNtGmgbaVF1oWZNIi8GXextALUpEhLqnJ0o3f9fcEw9iD3RFCaUiMmvmG/lhI50VBQX6ujX5ju3+dHHm1Mmb9dGsxyRKSwylHNLRt2HvL42O4C5IhsLsgEII74+Hd1zY+s5AdMklguMnmkaLwn9RGgr7dSfLk5ZreGhJUdD0+oz0ZxSOMNQ1VdB4fscnw5VCiOUBpb7d91vcklBJJpDwXpwOn50qKdXs2tLZpoqJU99XxVPBbMayXRnOK/Dp5p5tZzpbu0cT+sErG9/6o2rW9iLKQbOget2jQbgay3UIJrlhlJSK6Yz3dKx4dD74Ut3Ivu2X5xe8CSvopdm1kdh7e7/sfO7Ho4PlrT0NvTMhTISaaRhUoImITr244Njz8WwSVKOMhBI1hdIBMQuXlARShxuvPbt+3k0gx9GMsDVp0c7emq8nSiSFjzkVlCuKfHl+Q0aQai21Gb4E7SA59wDWGLLBg+Kk6/lqrKw/4dtWOLfKn/74+r2t3fVX5/IwcyExIBAKFFWOhskyWVx4tG3GmUfKCFRbOHYBNjiC6hBkBTrQRl+mSLeHZkOYOXeMRxIFCb6SME5gYJiGvH7MPn0q5wBCgqkgF4xBEVfdhksTyMmNpFT/chJQJQbkgitE8o73gRe4HsRYe/RJy86IFYtU1pVzSqxC/J8F5fMz/z8CDAAkCSSg0qSX5AAAAABJRU5ErkJggg==") no-repeat scroll 8px center rgba(0, 0, 0, 0);
+    display: block;
+    line-height: 19px;
+    padding-left: 42px;
+    text-transform: uppercase;
+    width: 43px;
+}
+
+#barra-brasil .brasil-flag {
+    border-right: 2px solid #dfdfdf;
+    float: left;
+    height: 32px;
+    padding: 7px 0 6px;
+    width: 115px;
+}
+
+#barra-brasil .link-barra {
+    color: #606060;
+}
+#barra-brasil a {
+    text-decoration: none;
+}
+
+
+#barra-brasil .acesso-info {
+    left: 130px;
+    position: absolute;
+    list-style: none outside none;
+    margin: 0;
+    padding: 0;
+    vertical-align: middle;
+}
+
+#wrapper {
+    font-size: 1.2em;
+}
+
+/******************************************************************************************
+ * Folhas de estilo aplicáveis ao banner
+ ******************************************************************************************/
+
+#header-banner {
+    background-color: #f9c404;
+    background-image: radial-gradient(ellipse at center center , #fcdd4e 1%, #f9c404 100%);
+    color: #fff;
+    padding: 13px 0 0;
+}
+
+#header-banner > div {
+    margin: 0 auto;
+    max-width: 960px;
+    overflow: hidden;
+    position: relative;
+}
+
+#accessibility {
+    display: block !important;
+    float: left;
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 10px;
+    display: block !important;
+    padding-left: 0px;
+}
+
+/** Links sobre o logo **/
 
 #accessibility a {
     color: #00500f;
+    margin-right: 8px;
 }
 
 #accessibility span {
-    background: url("../../../image/participa-br/bg-verde.gif") center center no-repeat;
+    background: url("../../../image/participa-br/bg-verde.gif") no-repeat scroll center center rgba(0, 0, 0, 0);
     color: #fff;
     font-size: 8px;
+    padding: 0 4px;
 }
 
-/* Titulo do portal
-   ========================================================================== */
-
-#portal-logo,
-#portal-title { color: #fff !important; }
-
-/* Menu site actions - Acessibilidade, Alto Contraste, Mapa do site
-   ========================================================================== */
-
-#portal-siteactions,
-#portal-language { border-bottom: 1px dotted #00500f; }
-
-#portal-siteactions a,
-#portal-siteactions a:hover,
-#portal-language a,
-#portal-language a:hover { color: #00500f !important; }
-
-/* Menu sobre o portal
-   ========================================================================== */
-
-#sobre { 
-	background-image: url('../../../image/participa-br/fundo_menu.png');
-	background-repeat: repeat;
-	background-attachment: scroll;
-	background-position: 0% 0%;
-	background-clip: border-box;
-	background-origin: padding-box;
-	background-size: auto auto; 
-}
-
-#sobre a { 
-	color: #9c9c9c;
-}
-
-#sobre .portalservicos-item a { border-right: 1px solid #9c9c9c; }
-
-/* Formulário de busca
-   ========================================================================== */
-
-#portal-searchbox { border: 1px solid #CCCCCC; }
-
-
-/* ==========================================================================
-   Sprinte Icons
-   ========================================================================== */
-
-/* icones de redes sociais */
-#social-icons a,
-/* central de conteudo */
-.item-central .link-videos,
-.item-central .link-audios,
-.item-central .link-infograficos,
-.item-central .link-publicacoes,
-.item-central .link-fotos,
-.item-central .link-aplicativos,
-/* icone do botão de busca */
-#header input.searchButton { 
-	  background-image: url(../../../image/participa-br/search-button.gif);
-  background-position: 0px -2px;
-  background-repeat: no-repeat;
-  background-color: #ffffff;
- 
-}
-/* icone do botão de relatar erros */
-#content .relatar-erros a { background: url("../../../image/participa-br/icon-reportar-erros.png") no-repeat; }
-
-/* Summary view */
-#content .summary-view-icon [class*="icon"] {
-    background-image: url("../../../image/participa-br/summary-view-icons-sprite.png");
+/** Treinamento: antes esta propriedade estava ligada diretamente à "li" **/
+#header-banner li {
+	display: inline;
+    padding: 0;
+    vertical-align: middle;
 }
 
 
-/* ==========================================================================
-   Portles
-   ========================================================================== */
-
-/* Portlet de navegação
-   ========================================================================== */
-
-#portal-column-one > .portletWrapper dl.portlet.first-item-nav a,
-#portal-column-one > .portletWrapper dl.portlet.first-item-nav a span {
-    color: #2c67cd !important;
+/** Ações do site **/
+#portal-siteactions, #portal-language {
+    border-bottom: 1px dotted #00500f;
+}
+#portal-siteactions {
+    clear: none;
+    display: block;
+    float: right;
+    font-size: 10px;
+    padding-bottom: 2px;
+    text-align: center;
 }
 
-.portlet-static-centrais-de-conteudos .portletHeader,
-.portletNavigationTree .portletHeader {
-    border-top: 4px solid #00510f;
-    color: #00510f;
+#portal-siteactions li {
+    display: inline;
 }
 
-.portletNavigationTree .portletHeader a { color: #00510f !important; }
-
-.navTreeLevel0 > li.navTreeItemInPath,
-.navTreeLevel0 > li.navTreeCurrentNode {
-    border-top: 2px solid #64946e !important;
-    border-bottom: 2px solid #64946e !important;
+#portal-siteactions li {
+    margin-right: 0.5em;
 }
 
-
-/* ==========================================================================
-   Collective Cover
-   ========================================================================== */
-
-/* Tiles
-   ========================================================================== */
-
-.tile a { color: #162937 !important; }
-
-
-/* ==========================================================================
-   Footer
-   ========================================================================== */
-
-#footer {
-    background: #034811;
-    color: #fff;
+#portal-siteactions a, #portal-siteactions a:hover, #portal-language a, #portal-language a:hover {
+    color: #00500f !important;
+}
+#siteaction-accessibility a {
+    padding-left: 0;
+}
+#portal-siteactions a {
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 4px 0 4px 10px;
 }
 
-#footer a { color: #fff; }
-
-#footer .footer-logos { background: #00420c; }
-
-/* Doormat
-   ========================================================================== */
-
-#doormat-container { background: #034811; }
-
-#doormat-container dl { border-left: 1px dotted #7dc48a; }
-
-#doormat-container dt { color: #7dc48a; }
-
-
-/* ==========================================================================
-   Media Queries
-   ========================================================================== */
-
-/* Smartphone
-   ========================================================================== */
-
-@media only screen and (min-width : 320px) and (max-width : 768px) {
-
-    .menuTrigger {
-        background: #065116 url("../../../image/participa-br/bg-menu-mobile.png") top right no-repeat;
-    }
-
-    .portlet-static-centrais-de-conteudos .portletHeader,
-    .portletNavigationTree .portletHeader {
-        background: #edeff1 url("../../../image/participa-br/portlet-header.gif") no-repeat 96% center;
-    }
-
-    .portletNavigationTree .portletHeader.ativo {
-        background: url("../../../image/participa-br/portlet-header-expanded.gif") no-repeat 96% center;
-    }
-
+#siteaction-accessibility a {
+    padding-left: 0;
+}
+#portal-siteactions .last-item {
+    margin-right: 0;
 }
 
 
-@media only screen and (min-width : 320px) and (max-width : 480px) {
-  #header #portal-searchbox .searchButton {
-    background: url("../../../image/participa-br/search-button-30px.png") no-repeat;
-  }
+
+/** Search box **/
+#portal-searchbox {
+    border: 1px solid #cccccc;
+}
+#portal-searchbox {
+    background: none repeat scroll 0 0 #fff;
+    border-radius: 5px;
+    clear: right !important;
+    float: right;
+    font-size: 80%;
+    margin: 3.12em 0 0;
+    padding: 2px;
+    text-align: right;
+}
+
+
+#portal-searchbox form {
+    white-space: nowrap;
+}
+
+.LSBox {
+    border: medium none;
+    margin: 0;
+    padding: 0;
+}
+fieldset, .editionComment {
+    line-height: 1.5em;
+    width: auto;
+}
+
+
+.hiddenStructure {
+    background: none repeat scroll 0 0 transparent;
+    border: medium none;
+    display: block;
+    height: 0.1em;
+    margin: -0.1em 0 0 -0.1em;
+    overflow: hidden;
+    padding: 0;
+    width: 1px;
+}
+
+#portal-searchbox label {
+    font-weight: normal;
+}
+
+
+#portal-searchbox .searchField {
+    border: medium none;
+    color: #00420c;
+    font-family: "open_sansregular",Arial,Helvetica,sans-serif;
+    font-size: 1.9em;
+    padding: 0.3em 0.35em;
+    width: 186px;
+}
+input.searchField {
+    -moz-appearance: none;
+}
+
+
+#social-icons a, .item-central .link-videos, .item-central .link-audios, .item-central .link-infograficos, .item-central .link-publicacoes, .item-central .link-fotos, .item-central .link-aplicativos, #header input.searchButton {
+    background-color: #ffffff;
+    background-image: url("../img/search-button.gif");
+    background-position: 0 -2px;
+    background-repeat: no-repeat;
+}
+#header input.searchButton {
+    padding-right: 5px;
+}
+#searchGadget, #header input.searchButton {
+    border: medium none;
+    text-indent: -2000px;
 }

@@ -48,26 +48,14 @@
         <title><%= siteName %>: <%= title %></title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
         <meta name="Generator" content="<%= generator %>" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="shortcut icon" href="<%= request.getContextPath() %>/favicon.ico" type="image/x-icon"/>
 	    <link rel="stylesheet" href="<%= request.getContextPath() %>/static/css/jquery-ui-1.10.3.custom/redmond/jquery-ui-1.10.3.custom.css" type="text/css" />
-	    <link rel="stylesheet" href="<%= request.getContextPath() %>/static/css/participa-br/bootstrap.css" type="text/css" />
-	    
-	    <!-- 
-	    	Folhas de estilo do participa.br
-	     -->
-		<link rel="stylesheet" type="text/css" href="<%= request.getContextPath() %>/static/css/participa-br/reset-cachekey-85cc61bfb0ce648e03622791da04dd32.css" media="screen" />
-		<link rel="stylesheet" type="text/css" href="<%= request.getContextPath() %>/static/css/participa-br/base-cachekey-37a150862a358cc0e22d4463c5b58e09.css" media="screen" />
-		<link rel="stylesheet" type="text/css" href="<%= request.getContextPath() %>/static/css/participa-br/embedder-cachekey-555a62dfc783c030b80eb2b3a238f063.css" media="screen" />
-		<link rel="stylesheet" type="text/css" href="<%= request.getContextPath() %>/static/css/participa-br/cabecalho-amarelo-theme.css" media="screen" />
-		<link rel="stylesheet" type="text/css" href="<%= request.getContextPath() %>/static/css/participa-br/participa-br.css" media="screen" />
-		<link rel="stylesheet" type="text/css" href="<%= request.getContextPath() %>/static/css/participa-br/resourcesecom.brasil.portalmain-cachekey-0c2dbf552f398e99f90011b684a2b182.css" media="screen" />
-		<link rel="stylesheet" type="text/css" href="<%= request.getContextPath() %>/static/css/participa-br/style.css" media="screen" />
-	    <!-- 
-	    	FIM: folhas de estilo do participa.br
-	     -->
-	    
+	    <link rel="stylesheet" href="<%= request.getContextPath() %>/static/css/bootstrap/bootstrap.min.css" type="text/css" />
+	    <link rel="stylesheet" href="<%= request.getContextPath() %>/static/css/bootstrap/bootstrap-theme.min.css" type="text/css" />
+	    <link rel="stylesheet" href="<%= request.getContextPath() %>/static/css/bootstrap/dspace-theme.css" type="text/css" />
+	    <!-- Folha de estilo de sobreposição do participa-br -->
+	    <link rel="stylesheet" href="<%= request.getContextPath() %>/static/css/participa-br/style.css" type="text/css" />
 <%
     if (!"NONE".equals(feedRef))
     {
@@ -99,13 +87,6 @@
 	<script type='text/javascript' src='<%= request.getContextPath() %>/static/js/holder.js'></script>
 	<script type="text/javascript" src="<%= request.getContextPath() %>/utils.js"></script>
     <script type="text/javascript" src="<%= request.getContextPath() %>/static/js/choice-support.js"> </script>
-   
-    <!-- 
-       	Scripts da presidência
-     -->
-    <!-- 
-       	Fim: scripts da presidência
-     -->
 
     <%--Gooogle Analytics recording.--%>
     <%
@@ -121,7 +102,7 @@
                 var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
                 ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
                 var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-            })(); 
+            })();
         </script>
     <%
     }
@@ -142,153 +123,108 @@
 
     <%-- HACK: leftmargin, topmargin: for non-CSS compliant Microsoft IE browser --%>
     <%-- HACK: marginwidth, marginheight: for non-CSS compliant Netscape browser --%>
-    <body class="undernavigation">
+    <body class="">
 <a class="sr-only" href="#content">Skip navigation</a>
-<header class="navbar navbar-inverse navbar-fixed-top">    
 	
-	
-	<!-- 
-		Barra do governo
+<main id="content" role="main">
+		
+		<!-- 
+		Barra governo
 	 -->
 	<div id="barra-brasil">
 		<div id="wrapper-barra-brasil">
 			<div class="brasil-flag">
 				<a class="link-barra" href="http://brasil.gov.br/">Brasil</a>
-			</div><span class="acesso-info"><a class="link-barra" href="http://brasil.gov.br/barra#acesso-informacao">Acesso à informação</a></span>
+			</div>
+			<span class="acesso-info"><a class="link-barra" href="http://brasil.gov.br/barra#acesso-informacao">Acesso à informação</a></span>
 		</div>
 	</div>
 	
-	
 	<!-- 
-		Logo do repositório
+		Banner do participa.br	
 	 -->
-	 <div id="wrapper" class="wrelativo">
+	<div role="banner" id="header-banner">
+	
+			<div>
 
-	
-		 <div id="header" role="banner">
-	
-					<div>
-	
-						<ul id="accessibility">
-							<li>
-								<a accesskey="1" href="http://www.brasil.gov.br/#acontent" id="link-conteudo"> Ir para o conteúdo <span>1</span> </a>
-							</li>
-							<li>
-								<a accesskey="2" href="http://www.brasil.gov.br/#anavigation" id="link-navegacao"> Ir para o menu <span>2</span> </a>
-							</li>
-							<li>
-								<a accesskey="3" href="http://www.brasil.gov.br/#SearchableText" id="link-buscar"> Ir para a busca <span>3</span> </a>
-							</li>
-							<li class="last-item">
-								<a accesskey="4" href="http://www.brasil.gov.br/#afooter" id="link-rodape"> Ir para o rodapé <span>4</span> </a>
-							</li>
-						</ul>
-						<ul id="portal-siteactions">
-							<li id="siteaction-accessibility">
-								<a href="http://www.brasil.gov.br/acessibilidade" title="Acessibilidade" accesskey="5">Acessibilidade</a>
-							</li>
-							<li id="siteaction-contraste">
-								<a href="http://www.brasil.gov.br/#" title="Alto Contraste" accesskey="6">Alto Contraste</a>
-							</li>
-							<li id="siteaction-mapadosite" class="last-item">
-								<a href="http://www.brasil.gov.br/mapadosite" title="Mapa do Site" accesskey="7">Mapa do Site</a>
-							</li>
-						</ul>
-						<div id="logo">
-							<a id="portal-logo" title="" href="index.html">
-							<br/>
-							<br/>
-							<img src="<%= request.getContextPath() %>/image/participa-br/nometopo.png"> </a>
-						</div>
-	
-						<div id="portal-searchbox">
-	
-							<form id="nolivesearchGadget_form" action="http://www.brasil.gov.br/@@busca">
-								<fieldset class="LSBox">
-									<legend class="hiddenStructure">
-										Buscar no site
-									</legend>
-									<label class="hiddenStructure" for="nolivesearchGadget">Busca</label>
-	
-									<input name="SearchableText" size="18" title="Search Site" placeholder="Buscar no site" class="searchField" id="nolivesearchGadget" type="text">
-									<input class="searchButton" value="Buscar" type="submit">
-	
-									<div class="LSResult" id="LSResult">
-										<div class="LSShadow" id="LSShadow"></div>
-									</div>
-								</fieldset>
-							</form>
-	
-						</div>
-	
-						<div id="social-icons">
-							<img src="<%= request.getContextPath() %>/image/participa-br/social_links.png" usemap="#image-maps-2014-10-05-103938" alt="" border="0" height="20">
-							<map name="image-maps-2014-10-05-103938" id="ImageMapsCom-image-maps-2014-10-05-103938">
-								<area alt="" title="" href="#" shape="rect" coords="2,0,32,32" style="outline:none;" target="_self">
-								<area alt="" title="" href="#" shape="rect" coords="39,0,73,33" style="outline:none;" target="_self">
-								<area alt="" title="" href="#" shape="rect" coords="79,0,113,32" style="outline:none;" target="_self">
-								<area alt="" title="" href="#" shape="rect" coords="119,0,151,32" style="outline:none;" target="_self">
-								<area shape="rect" coords="149,31,151,33" alt="Image Map" style="outline:none;" title="Image Map" href="http://www.image-maps.com/index.php?aff=mapped_users_0">
-							</map>
-						</div>
-	
-					</div>
-	
-					<div id="sobre2" style="height: 30px; background-color: #F8C300; width: 100%; max-width: 3000px">
-						&nbsp;
-					</div>
-	
-					<div id="sobre">
-						<ul>
-							<li id="portalservicos-perguntas-frequentes-1" class="portalservicos-item">
-								<a href="index.html">PÁGINA INICIAL</a>
-							</li>
-							<li id="portalservicos-fale-com-o-governo" class="portalservicos-item">
-								<a href="a_biblioteca.html">A BIBLIOTECA</a>
-							</li>
-							<li id="portalservicos-fale-com-o-governo" class="portalservicos-item">
-								<a href="meu_espaco.html">MEU ESPAÇO</a>
-							</li>
-							<li id="portalservicos-fale-com-o-governo" class="portalservicos-item">
-								<a href="recomendamos.html">RECOMENDAMOS</a>
-							</li>
-							<li id="portalservicos-fale-com-o-governo" class="portalservicos-item last-item">
-								<a href="fale_conosco.html">FALE CONOSCO</a>
-							</li>
-						</ul>
-					</div>
+				<ul id="accessibility">
+					<li><a id="link-conteudo" href="http://www.brasil.gov.br/#acontent" accesskey="1"> Ir para o conteúdo <span>1</span>
+					</a></li>
+					<li><a id="link-navegacao" href="http://www.brasil.gov.br/#anavigation" accesskey="2">
+							Ir para o menu <span>2</span>
+					</a></li>
+					<li><a id="link-buscar" href="http://www.brasil.gov.br/#SearchableText" accesskey="3">
+							Ir para a busca <span>3</span>
+					</a></li>
+					<li class="last-item"><a id="link-rodape" href="http://www.brasil.gov.br/#afooter" accesskey="4"> Ir
+							para o rodapé <span>4</span>
+					</a></li>
+				</ul>
+				<ul id="portal-siteactions">
+					<li id="siteaction-accessibility"><a accesskey="5" title="Acessibilidade" href="http://www.brasil.gov.br/acessibilidade">Acessibilidade</a></li>
+					<li id="siteaction-contraste"><a accesskey="6" title="Alto Contraste" href="http://www.brasil.gov.br/#">Alto Contraste</a></li>
+					<li class="last-item" id="siteaction-mapadosite"><a accesskey="7" title="Mapa do Site" href="http://www.brasil.gov.br/mapadosite">Mapa do Site</a></li>
+				</ul>
+				
+				<div id="logo">
+					<a href="index.html" title="" id="portal-logo"> <br> <br>
+						<img src="<%= request.getContextPath() %>/image/participa-br/nometopo.png">
+					</a>
 				</div>
-	 </div>
-	
-    <%
-    if (!navbar.equals("off"))
-    {
-%>
-       <%--      <div class="container">
-                <dspace:include page="<%= navbar %>" />
-            </div> --%>
-<%
-    }
-    else
-    {
-    	%>
-        <div class="container">
-            <dspace:include page="/layout/navbar-minimal.jsp" />
-        </div>
-<%    	
-    }
-%>
-</header>
 
-<main id="content" role="main">
+				<div id="portal-searchbox">
 
+					<form action="http://www.brasil.gov.br/@@busca" id="nolivesearchGadget_form">
+						<fieldset class="LSBox">
+							<legend class="hiddenStructure"> Buscar no site </legend>
+							<label for="nolivesearchGadget" class="hiddenStructure">Busca</label>
+
+							<input type="text" id="nolivesearchGadget" class="searchField" placeholder="Buscar no site" title="Search Site" size="18" name="SearchableText"> <input type="submit" value="Buscar" class="searchButton">
+
+							<div id="LSResult" class="LSResult">
+								<div id="LSShadow" class="LSShadow"></div>
+							</div>
+						</fieldset>
+					</form>
+
+				</div>
+
+				<div id="social-icons">
+					<img height="20" border="0" alt="" usemap="#image-maps-2014-10-05-103938" src="img/social_links.png">
+					<map id="ImageMapsCom-image-maps-2014-10-05-103938" name="image-maps-2014-10-05-103938">
+						<area target="_self" style="outline: none;" coords="2,0,32,32" shape="rect" href="#" title="" alt="">
+						<area target="_self" style="outline: none;" coords="39,0,73,33" shape="rect" href="#" title="" alt="">
+						<area target="_self" style="outline: none;" coords="79,0,113,32" shape="rect" href="#" title="" alt="">
+						<area target="_self" style="outline: none;" coords="119,0,151,32" shape="rect" href="#" title="" alt="">
+						<area href="http://www.image-maps.com/index.php?aff=mapped_users_0" title="Image Map" style="outline: none;" alt="Image Map" coords="149,31,151,33" shape="rect">
+					</map>
+				</div>
+
+			</div>
+
+			<div style="height: 30px; background-color: #F8C300; width: 100%; max-width: 3000px" id="sobre2">
+				&nbsp;</div>
+
+			<div id="sobre">
+				<ul>
+					<li class="portalservicos-item" id="portalservicos-perguntas-frequentes-1"><a href="index.html">PÁGINA
+							INICIAL</a></li>
+					<li class="portalservicos-item" id="portalservicos-fale-com-o-governo"><a href="a_biblioteca.html">A
+							BIBLIOTECA</a></li>
+					<li class="portalservicos-item" id="portalservicos-fale-com-o-governo"><a href="meu_espaco.html">MEU
+							ESPAÇO</a></li>
+					<li class="portalservicos-item" id="portalservicos-fale-com-o-governo"><a href="recomendamos.html">RECOMENDAMOS</a>
+					</li>
+					<li class="portalservicos-item last-item" id="portalservicos-fale-com-o-governo"><a href="fale_conosco.html">FALE
+							CONOSCO</a></li>
+				</ul>
+			</div>
 	
+	</div>	
 	
 	<!-- 
-		
-		Topo do repositório
+		Fim: Banner do participa.br	
 	 -->
-
 
 	<div class="container banner">
 		<div class="row">
@@ -300,17 +236,17 @@
 	        </div>
 		</div>
 	</div>	
-	<br/>
-	                <%-- Location bar --%>
-	<%
-	    if (locbar)
-	    {
-	%>
-	<div class="container">
-	                <dspace:include page="/layout/location-bar.jsp" />
-	</div>                
-	<%
-	    }
+<br/>
+                <%-- Location bar --%>
+<%
+    if (locbar)
+    {
+%>
+<div class="container">
+                <dspace:include page="/layout/location-bar.jsp" />
+</div>                
+<%
+    }
 %>
 
 
