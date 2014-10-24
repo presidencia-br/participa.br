@@ -23,6 +23,11 @@
 <%@ page import="org.dspace.app.util.Util"%>
 <%@ page import="javax.servlet.jsp.jstl.core.*"%>
 <%@ page import="javax.servlet.jsp.jstl.fmt.*"%>
+<%@ page import="org.dspace.core.Context" %>
+<%@ page import="org.dspace.authorize.AuthorizeManager" %>
+<%@ page import="org.dspace.app.webui.util.UIUtil" %>
+
+
 
 <%
     String title = (String) request.getAttribute("dspace.layout.title");
@@ -40,17 +45,24 @@
     String dsVersion = Util.getSourceVersion();
     String generator = dsVersion == null ? "DSpace" : "DSpace "+dsVersion;
     String analyticsKey = ConfigurationManager.getProperty("jspui.google.analytics.key");
+    
+    Context context = UIUtil.obtainContext(request);
+    boolean isAdmin = AuthorizeManager.isAdmin(context);
+
 %>
 
 <!DOCTYPE html>
 <html>
 <head>
-<title><%= siteName %>: <%= title %></title>
+<title>Portal Brasil: <%= title %></title>
+
+<link rel="shortcut icon" href="<%= request.getContextPath() %>/favicon.png" type="image/png"/>
+
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <meta name="Generator" content="<%= generator %>" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="shortcut icon"
-	href="<%= request.getContextPath() %>/favicon.ico" type="image/x-icon" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+	
 <link rel="stylesheet"
 	href="<%= request.getContextPath() %>/static/css/jquery-ui-1.10.3.custom/redmond/jquery-ui-1.10.3.custom.css"
 	type="text/css" />
@@ -172,7 +184,7 @@
 		Div container das modificações do participa.br, criada para isolar folha de estilo do DSpace e do portal	 
 	  -->
 	<div class="layout-participa">
-
+	
 		<div id="wrapper" class="wrelativo">
 
 
@@ -214,23 +226,23 @@
 					</ul>
 
 					<div id="logo">
-						<a href="index.html" title="" id="portal-logo"> <br> <br>
+						<a href="<%= request.getContextPath() %>" title="" id="portal-logo"> <br> <br>
 							<img
 							src="<%= request.getContextPath() %>/image/participa-br/nometopo.png">
 						</a>
 					</div>
 
 					<div id="portal-searchbox">
-
-						<form action="http://www.brasil.gov.br/@@busca"
-							id="nolivesearchGadget_form">
+						
+						<!-- Treinamento: modificação de variávies -->
+						<form method="get" action="<%= request.getContextPath() %>/simple-search" scope="search">
 							<fieldset class="LSBox">
 								<legend class="hiddenStructure"> Buscar no site </legend>
 								<label for="nolivesearchGadget" class="hiddenStructure">Busca</label>
 
-								<input type="text" id="nolivesearchGadget" class="searchField"
+								<input type="text" class="searchField"
 									placeholder="Buscar no site" title="Search Site" size="18"
-									name="SearchableText"> <input type="submit"
+									name="query" id="tequery" size="25"> <input type="submit"
 									value="Buscar" class="searchButton">
 
 								<div id="LSResult" class="LSResult">
@@ -272,19 +284,27 @@
 					<ul>
 						<li class="portalservicos-item"
 							id="portalservicos-perguntas-frequentes-1"><a
-							href="index.html">PÁGINA INICIAL</a></li>
+							href="<%= request.getContextPath() %>">PÁGINA INICIAL</a></li>
 						<li class="portalservicos-item"
 							id="portalservicos-fale-com-o-governo"><a
-							href="a_biblioteca.html">A BIBLIOTECA</a></li>
+							href="#">A BIBLIOTECA</a></li>
+							
+						<!-- Treinamento: Adição de verificação para usuário administrador -->
+						<% if(isAdmin) { %>
+							<li class="portalservicos-item"
+								id="portalservicos-fale-com-o-governo">
+								<a href="<%= request.getContextPath() %>/community-list">COMUNIDADES E COLEÇÕES</a></li>
+						<% } %>
+							
+						<li class="portalservicos-item"
+							id="portalservicos-fale-com-o-governo">
+							<a href="<%= request.getContextPath() %>/mydspace">MEU ESPAÇO</a></li>
 						<li class="portalservicos-item"
 							id="portalservicos-fale-com-o-governo"><a
-							href="meu_espaco.html">MEU ESPAÇO</a></li>
-						<li class="portalservicos-item"
-							id="portalservicos-fale-com-o-governo"><a
-							href="recomendamos.html">RECOMENDAMOS</a></li>
+							href="#">RECOMENDAMOS</a></li>
 						<li class="portalservicos-item last-item"
 							id="portalservicos-fale-com-o-governo"><a
-							href="fale_conosco.html">FALE CONOSCO</a></li>
+							href="<%= request.getContextPath() %>/feedback">FALE CONOSCO</a></li>
 					</ul>
 				</div>
 
@@ -308,15 +328,16 @@
 						<div
 							style="padding-top: 20px; font-family: Arial, Helvetica, sans-serif; font-size: 10px; color: #00316f; padding-right: 0px;"
 							class="col-md-8 text-right">
+							
 							<input type="text"
 								style="font-family: Arial, Helvetica, sans-serif; font-size: 10px; color: #00316f"
 								id="nolivesearchGadget" class="searchField"
 								placeholder="Busca Simples nas Comunidades" size="60"
-								name="SearchableText"> &nbsp; <input type="image"
-								style="height: 13px"
-								src="<%= request.getContextPath() %>/image/participa-br/search-button.gif">
-							&nbsp; <input type="button"
-								value="Busca Avançada nas Comunidades" class="searchButton">
+								name="SearchableText"> &nbsp; 
+								<input type="image" style="height: 13px" src="<%= request.getContextPath() %>/image/participa-br/search-button.gif">
+								&nbsp; 
+								<input type="button" value="Busca Avançada nas Comunidades" class="searchButton">
+								
 						</div>
 					</div>
 					<div class="row">

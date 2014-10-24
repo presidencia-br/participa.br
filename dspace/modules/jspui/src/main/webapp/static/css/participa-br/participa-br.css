@@ -1,6 +1,5 @@
 @charset "UTF-8";
 
-
 #barra-brasil {
 	background: none repeat scroll 0 0 #f1f1f1;
 	font-family: "Open Sans", Arial, Helvetica, sans-serif;
@@ -164,11 +163,6 @@ div#wrapper-barra-brasil {
 	padding: 5px 0;
 }
 
-.layout-participa #sobre ul {
-	max-width: 960px;
-	margin: 0 auto;
-	text-align: right;
-}
 
 .layout-participa #sobre a {
 	color: #00500f;
@@ -3133,7 +3127,8 @@ div#wrapper-barra-brasil {
 	position: relative;
 	overflow: hidden;
 	margin: 0 auto;
-	/** Modificado: Marcio **/max-width: 1170px;
+	/** Modificado: Marcio **/
+	max-width: 1170px;
 }
 
 .layout-participa #accessibility {
@@ -3216,9 +3211,7 @@ div#wrapper-barra-brasil {
 
 .layout-participa #sobre ul {
 	margin: 0 auto;
-	max-width: 960px;
 	text-align: center;
-	max-height: 27px;
 }
 
 .layout-participa #sobre .portalservicos-item a {
@@ -6044,19 +6037,16 @@ div#wrapper-barra-brasil {
 	}
 }
 
-
-
-
 .navbar-participa {
-    border-radius: 4px;
-    border: 1px solid transparent;
-    min-height: 50px;
-    position: relative;
+	border-radius: 4px;
+	border: 1px solid transparent;
+	min-height: 50px;
+	position: relative;
 }
 
 .layout-participa .container {
-    margin-left: auto;
-    margin-right: auto;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 .navbar-participa .searchField {
@@ -6067,20 +6057,22 @@ div#wrapper-barra-brasil {
 	text-align: justify;
 }
 
-
-.communities-container > a {
+.communities-container>a {
 	width: 100px; /* Declare your value. Can be in relative units. */
 	display: inline-block;
 	vertical-align: top;
-
 	/* IE fix. */
 	*display: inline;
 	zoom: 1;
-	}
+}
 
-	
 .communities-container:after {
 	content: "";
 	width: 90%;
 	display: inline-block;
-    }
+}
+
+.rodape {
+	bottom: 0;
+	position: fixed;
+}
