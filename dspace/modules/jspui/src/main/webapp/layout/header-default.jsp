@@ -174,8 +174,7 @@
 				<a class="link-barra" href="http://brasil.gov.br/">Brasil</a>
 			</div>
 			<span class="acesso-info"><a class="link-barra"
-				href="http://brasil.gov.br/barra#acesso-informacao">Acesso à
-					informação</a></span>
+				href="http://brasil.gov.br/barra#acesso-informacao">Acesso à informação</a></span>
 		</div>
 	</div>
 
@@ -197,20 +196,16 @@
 
 					<ul id="accessibility">
 						<li><a id="link-conteudo"
-							href="http://www.brasil.gov.br/#acontent" accesskey="1"> Ir
-								para o conteúdo <span>1</span>
+							href="http://www.brasil.gov.br/#acontent" accesskey="1"> Ir para o conteúdo <span>1</span>
 						</a></li>
 						<li><a id="link-navegacao"
-							href="http://www.brasil.gov.br/#anavigation" accesskey="2">
-								Ir para o menu <span>2</span>
+							href="http://www.brasil.gov.br/#anavigation" accesskey="2">Ir para o menu <span>2</span>
 						</a></li>
 						<li><a id="link-buscar"
-							href="http://www.brasil.gov.br/#SearchableText" accesskey="3">
-								Ir para a busca <span>3</span>
+							href="http://www.brasil.gov.br/#SearchableText" accesskey="3">Ir para a busca <span>3</span>
 						</a></li>
 						<li class="last-item"><a id="link-rodape"
-							href="http://www.brasil.gov.br/#afooter" accesskey="4"> Ir
-								para o rodapé <span>4</span>
+							href="http://www.brasil.gov.br/#afooter" accesskey="4"> Irpara o rodapé <span>4</span>
 						</a></li>
 					</ul>
 					<ul id="portal-siteactions">
@@ -312,7 +307,7 @@
 
 			<!-- 
 			Fim: Banner do participa.br	
-		 -->
+		 	-->
 
 
 
@@ -328,6 +323,12 @@
 						<div
 							style="padding-top: 20px; font-family: Arial, Helvetica, sans-serif; font-size: 10px; color: #00316f; padding-right: 0px;"
 							class="col-md-8 text-right">
+							
+							
+							<!-- 
+								Busca contextualizada
+							 -->
+							 
 							
 							<input type="text"
 								style="font-family: Arial, Helvetica, sans-serif; font-size: 10px; color: #00316f"
@@ -345,24 +346,40 @@
 					</div>
 					<div class="row">
 						<div class="col-md-1">&nbsp;</div>
-						<div
-							style="alignment-adjust: central; padding-right: 0px;" class="col-md-12 communities-container">
-							<a href="comunidade_1.html"> <img
-								src="<%= request.getContextPath() %>/image/participa-br/comu1.png"></a>&nbsp;&nbsp;<a
-								href="#"> <img
-								src="<%= request.getContextPath() %>/image/participa-br/comu2.png"></a>&nbsp;&nbsp;
-							<a href="#"><img
-								src="<%= request.getContextPath() %>/image/participa-br/comu3.png"></a>&nbsp;&nbsp;
-							<a href="#"><img
-								src="<%= request.getContextPath() %>/image/participa-br/comu4.png"></a>&nbsp;&nbsp;
-							<a href="#"><img
-								src="<%= request.getContextPath() %>/image/participa-br/comu5.png"></a>&nbsp;&nbsp;
-							<a href="#"><img
-								src="<%= request.getContextPath() %>/image/participa-br/comu6.png"></a>&nbsp;&nbsp;
-							<a href="#"><img
-								src="<%= request.getContextPath() %>/image/participa-br/comu7.png"></a>&nbsp;&nbsp;
-							<a href="#"><img
-								src="<%= request.getContextPath() %>/image/participa-br/comu8.png"></a>
+						
+						<div style="alignment-adjust: central; padding-right: 0px;" class="col-md-12 communities-container">
+							
+							<a href="<%= request.getContextPath() %>/handle/<%= ConfigurationManager.getProperty("home.community.handle.politicagestaogovernanca") %>"> 
+								<img src="<%= request.getContextPath() %>/image/participa-br/comu1.png"></a>&nbsp;&nbsp;
+							
+							<a href="<%= request.getContextPath() %>/handle/<%= ConfigurationManager.getProperty("home.community.handle.instanciasmecanismos") %>"> 
+								<img src="<%= request.getContextPath() %>/image/participa-br/comu2.png">
+							</a>&nbsp;&nbsp;
+							
+							<a href="<%= request.getContextPath() %>/handle/<%= ConfigurationManager.getProperty("home.community.handle.organizacoesmovimentos") %>">
+								<img src="<%= request.getContextPath() %>/image/participa-br/comu3.png">
+							</a>&nbsp;&nbsp;
+							
+							<a href="<%= request.getContextPath() %>/handle/<%= ConfigurationManager.getProperty("home.community.handle.processoseducativos") %>">
+								<img src="<%= request.getContextPath() %>/image/participa-br/comu4.png">
+							</a>&nbsp;&nbsp;
+							
+							<a href="<%= request.getContextPath() %>/handle/<%= ConfigurationManager.getProperty("home.community.handle.estudospesquisas") %>">
+								<img src="<%= request.getContextPath() %>/image/participa-br/comu5.png">
+							</a>&nbsp;&nbsp;
+							
+							
+							<a href="<%= request.getContextPath() %>/handle/<%= ConfigurationManager.getProperty("home.community.handle.dialogossociais") %>">
+								<img src="<%= request.getContextPath() %>/image/participa-br/comu6.png">
+							</a>&nbsp;&nbsp;
+							
+							<a href="<%= request.getContextPath() %>/handle/<%= ConfigurationManager.getProperty("home.community.handle.governoaberto") %>">
+								<img src="<%= request.getContextPath() %>/image/participa-br/comu7.png">
+							</a>&nbsp;&nbsp;
+							
+							<a href="<%= request.getContextPath() %>/handle/<%= ConfigurationManager.getProperty("home.community.handle.marcoregulatorio") %>">
+								<img src="<%= request.getContextPath() %>/image/participa-br/comu8.png">
+							</a>
 						</div>
 						<div class="col-md-1">&nbsp;</div>
 					</div>
@@ -371,12 +388,10 @@
 		</div>
 	</div>
 
-	<br />
-
 
 	<%-- Page contents --%>
 	<div class="container">
-		<% if (request.getAttribute("dspace.layout.sidebar") != null) { %>
-		<div class="row">
-			<div class="col-md-9">
-				<% } %>
+		<% if (request.getAttribute("dspace.layout.sidebar") != null && !request.getAttribute("dspace.layout.sidebar").toString().trim().isEmpty()) { %>
+			<div class="row">
+				<div class="col-md-9">
+		<% } %>

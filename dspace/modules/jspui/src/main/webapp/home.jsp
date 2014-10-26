@@ -38,8 +38,6 @@
 <%@ page import="org.dspace.content.Item" %>
 
 <%
-    Community[] communities = (Community[]) request.getAttribute("communities");
-
     Locale[] supportedLocales = I18nUtil.getSupportedLocales();
     Locale sessionLocale = UIUtil.getSessionLocale(request);
     Config.set(request.getSession(), Config.FMT_LOCALE, sessionLocale);
@@ -102,39 +100,6 @@ if (submissions != null && submissions.count() > 0)
 	
 	
           </h3>
-          
-		  <!-- Wrapper for slides -->
-		  <div class="carousel-inner">
-		    <%
-		    boolean first = true;
-		    for (Item item : submissions.getRecentSubmissions())
-		    {
-		        DCValue[] dcv = item.getMetadata("dc", "title", null, Item.ANY);
-		        String displayTitle = "Untitled";
-		        if (dcv != null & dcv.length > 0)
-		        {
-		            displayTitle = dcv[0].value;
-		        }
-		        dcv = item.getMetadata("dc", "description", "abstract", Item.ANY);
-		        String displayAbstract = "";
-		        if (dcv != null & dcv.length > 0)
-		        {
-		            displayAbstract = dcv[0].value;
-		        }
-		%>
-		    <div style="padding-bottom: 50px; min-height: 200px;" class="item <%= first?"active":""%>">
-		      <div style="padding-left: 80px; padding-right: 80px; display: inline-block;"><%= StringUtils.abbreviate(displayTitle, 400) %> 
-		      	<a href="<%= request.getContextPath() %>/handle/<%=item.getHandle() %>"> 
-		      		<button class="btn btn-success" type="button">See</button>
-		      		</a>
-                        <p><%= StringUtils.abbreviate(displayAbstract, 500) %></p>
-		      </div>
-		    </div>
-		<%
-				first = false;
-		     }
-		%>
-		  </div>
 
 		  <!-- Controls -->
 		  <a class="left carousel-control" href="#recent-submissions-carousel" data-slide="prev">
@@ -157,55 +122,32 @@ if (submissions != null && submissions.count() > 0)
 
 </div>
 <div class="container row">
-<%
-if (communities != null && communities.length != 0)
-{
-%>
-	<div class="col-md-4">		
-               <h3><fmt:message key="jsp.home.com1"/></h3>
-                <p><fmt:message key="jsp.home.com2"/></p>
-				<div class="list-group">
-<%
-	boolean showLogos = ConfigurationManager.getBooleanProperty("jspui.home-page.logos", true);
-    for (int i = 0; i < communities.length; i++)
-    {
-%><div class="list-group-item row">
-<%  
-		Bitstream logo = communities[i].getLogo();
-		if (showLogos && logo != null) { %>
-	<div class="col-md-3">
-        <img alt="Logo" class="img-responsive" src="<%= request.getContextPath() %>/retrieve/<%= logo.getID() %>" /> 
-	</div>
-	<div class="col-md-9">
-<% } else { %>
-	<div class="col-md-12">
-<% }  %>		
-		<h4 class="list-group-item-heading"><a href="<%= request.getContextPath() %>/handle/<%= communities[i].getHandle() %>"><%= communities[i].getMetadata("name") %></a>
-<%
-        if (ConfigurationManager.getBooleanProperty("webui.strengths.show"))
-        {
-%>
-		<span class="badge pull-right"><%= ic.getCount(communities[i]) %></span>
-<%
-        }
-
-%>
-		</h4>
-		<p><%= communities[i].getMetadata("short_description") %></p>
-    </div>
-</div>                            
-<%
-    }
-%>
-	</div>
-	</div>
-<%
-}
-%>
 	<%
     	int discovery_panel_cols = 8;
     	int discovery_facet_cols = 4;
     %>
 	<%@ include file="discovery/static-sidebar-facet.jsp" %>
+</div>
+
+<div class="layout-participa">
+<div class="row">
+					<div style="padding-top: 40px; font-family: Arial, Helvetica, sans-serif; font-size: 16px; color: #00316f; padding-left: 0px;" class="col-md-10">
+						BEM VINDO</div>
+					<div class="col-md-1">&nbsp;</div>
+				</div>
+				
+				<div class="row">
+					<div class="col-md-12 fundo_com_hr">&nbsp;</div>
+				</div>
+				
+				<div class="row">
+					<div style="font-family: Arial, Helvetica, sans-serif; color: #9b9b9c; font-size: 12px; line-height: 150%; text-align: justify;" class="col-md-10">
+						<br> Seja bem vindo à Biblioteca Digital da Participação
+						Social. Aqui você encontrará as publicações organizadas por
+						comunidades, subcomunidades e coleções. Fique à vontade para
+						explorar e acessar conteúdos do seu interesse! <br> <br>
+						<br> <br>
+					</div>
+				</div>
 </div>
 </dspace:layout>

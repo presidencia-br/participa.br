@@ -291,7 +291,7 @@ div#wrapper-barra-brasil {
 }
 
 @media screen {
-	.layout-participa * {
+	.layout-participa:not(input)  {
 		margin: 0;
 		padding: 0;
 	}
@@ -3014,7 +3014,8 @@ div#wrapper-barra-brasil {
 }
 
 }
-.layout-participa * {
+
+.layout-participa:not(input) {
 	margin: 0;
 	padding: 0;
 	list-style: none;
@@ -3037,7 +3038,6 @@ div#wrapper-barra-brasil {
 
 .layout-participa a:link, .layout-participa UNUSED#content a:link,
 	.layout-participa UNUSEDdl.portlet a:link {
-	border-bottom: none;
 	color: #2c67cd;
 }
 
@@ -6075,4 +6075,26 @@ div#wrapper-barra-brasil {
 .rodape {
 	bottom: 0;
 	position: fixed;
+}
+
+/** Retira margem direita do primeiro item de menu **/
+#sobre ul li:FIRST-CHILD a{
+	padding-left: 0px !important;
+}
+
+/** Retira margem esquerda do último item de menu **/
+#sobre ul li:last-child a{
+	padding-right: 0px !important;
+}
+
+/** Retira margem do topo de h1's **/
+h1, h2 {
+	margin-top: 0px !important;
+}
+
+#accessibility, #portal-siteactions {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	vertical-align: middle;
 }
