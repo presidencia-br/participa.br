@@ -221,20 +221,6 @@
 							</td>
 						</tr>
 						<tr>
-							<td>Adicionar filtros:</td>
-							<td>
-								<select class="form-control" id="filtername" name="filtername">
-									<%
-										for (DiscoverySearchFilter searchFilter : availableFilters)
-										{
-										    String fkey = "jsp.search.filter."+searchFilter.getIndexFieldName();
-										    %><option value="<%= searchFilter.getIndexFieldName() %>"><fmt:message key="<%= fkey %>"/></option><%
-										}
-									%>
-								</select>
-							</td>
-						</tr>
-						<tr>
 							<td>Ordenar por:</td>
 							<td>
 								<%
@@ -275,23 +261,6 @@
 							</td>
 						</tr>
 						<tr>
-							<td>
-								
-								<select class="form-control" id="filtertype" name="filtertype">
-									<%
-										for (String opt : options)
-										{
-										    String fkey = "jsp.search.filter.op."+opt;
-										    %><option value="<%= opt %>"><fmt:message key="<%= fkey %>"/></option><%
-										}
-									%>
-								</select>
-							</td>
-							<td>
-								<input type="text" id="filterquery" name="filterquery" size="45" required="required" class="form-control" />
-							</td>
-						</tr>
-						<tr>
 							<td>Itens por página:</td>
 							<td>
 					           <select name="rpp" class="form-control">
@@ -310,7 +279,6 @@
 						<tr>
 							<td align="right" colspan="2">
 								<a href="/jspui/simple-search" class="btn btn-default">Limpar pesquisas</a>
-								<input class="btn btn-default" type="submit" value="Adicionar filtro de busca" onclick="return validateFilters()" />
 								<input type="submit" value="Realizar busca" class="btn btn-default" id="main-query-submit"/>
 							</td>
 						</tr>
@@ -320,6 +288,7 @@
 				<div class="col-md-1">
 					&nbsp;
 				</div>
+				
 			</div>
     
     
@@ -334,48 +303,61 @@
 <% if (appliedFilters.size() > 0 ) { %>                                
 		<div class="discovery-search-appliedFilters">
 		<span><fmt:message key="jsp.search.filter.applied" /></span>
+		<div class="row">
+		
 		<%
 			int idx = 1;
 			for (String[] filter : appliedFilters)
 			{
 			    boolean found = false;
 			    %>
-			    <select id="filter_field_<%=idx %>" name="filter_field_<%=idx %>">
-				<%
-					for (DiscoverySearchFilter searchFilter : availableFilters)
-					{
-					    String fkey = "jsp.search.filter."+searchFilter.getIndexFieldName();
-					    %><option value="<%= searchFilter.getIndexFieldName() %>"<% 
-					            if (filter[0].equals(searchFilter.getIndexFieldName()))
-					            {
-					                %> selected="selected"<%
-					                found = true;
-					            }
-					            %>><fmt:message key="<%= fkey %>"/></option><%
-					}
-					if (!found)
-					{
-					    String fkey = "jsp.search.filter."+filter[0];
-					    %><option value="<%= filter[0] %>" selected="selected"><fmt:message key="<%= fkey %>"/></option><%
-					}
-				%>
-				</select>
-				<select id="filter_type_<%=idx %>" name="filter_type_<%=idx %>">
-				<%
-					for (String opt : options)
-					{
-					    String fkey = "jsp.search.filter.op."+opt;
-					    %><option value="<%= opt %>"<%= opt.equals(filter[1])?" selected=\"selected\"":"" %>><fmt:message key="<%= fkey %>"/></option><%
-					}
-				%>
-				</select>
-				<input type="text" id="filter_value_<%=idx %>" name="filter_value_<%=idx %>" value="<%= StringEscapeUtils.escapeHtml(filter[2]) %>" size="45"/>
-				<input class="btn btn-default" type="submit" id="submit_filter_remove_<%=idx %>" name="submit_filter_remove_<%=idx %>" value="X" />
+			    <div class="col-md-2">
+				    <select class="form-control" id="filter_field_<%=idx %>" name="filter_field_<%=idx %>">
+					<%
+						for (DiscoverySearchFilter searchFilter : availableFilters)
+						{
+						    String fkey = "jsp.search.filter."+searchFilter.getIndexFieldName();
+						    %><option value="<%= searchFilter.getIndexFieldName() %>"<% 
+						            if (filter[0].equals(searchFilter.getIndexFieldName()))
+						            {
+						                %> selected="selected"<%
+						                found = true;
+						            }
+						            %>><fmt:message key="<%= fkey %>"/></option><%
+						}
+						if (!found)
+						{
+						    String fkey = "jsp.search.filter."+filter[0];
+						    %><option value="<%= filter[0] %>" selected="selected"><fmt:message key="<%= fkey %>"/></option><%
+						}
+					%>
+					</select>
+			    </div>
+			    
+			    <div class="col-md-2">
+					<select class="form-control col-md-3" id="filter_type_<%=idx %>" name="filter_type_<%=idx %>">
+					<%
+						for (String opt : options)
+						{
+						    String fkey = "jsp.search.filter.op."+opt;
+						    %><option value="<%= opt %>"<%= opt.equals(filter[1])?" selected=\"selected\"":"" %>><fmt:message key="<%= fkey %>"/></option><%
+						}
+					%>
+					</select>
+			    </div>
+			    
+			    <div class="col-md-4">
+					<input class="form-control col-md6" type="text" id="filter_value_<%=idx %>" name="filter_value_<%=idx %>" value="<%= StringEscapeUtils.escapeHtml(filter[2]) %>" size="45"/>
+			    </div>
+			    <div class="col-md-2">
+					<input class="btn btn-default pull-right" type="submit" id="submit_filter_remove_<%=idx %>" name="submit_filter_remove_<%=idx %>" value="X" />
+			    </div>
 				<br/>
 				<%
 				idx++;
 			}
 		%>
+		</div>
 		</div>
 <% } %>
 		</form>
@@ -398,6 +380,56 @@
 					idx++;
 				}
 		} %>
+
+
+			<div style="font-family: Arial, Helvetica, sans-serif; color: #9b9b9c; font-size: 12px; line-height: 150%; text-align: justify; " class="col-md-5">
+					
+					<table style="border-collapse:separate; border-spacing:0 5px;">
+					<tr>
+							<td>Adicionar filtros:</td>
+							<td>
+								<select class="form-control" id="filtername" name="filtername">
+									<%
+										for (DiscoverySearchFilter searchFilter : availableFilters)
+										{
+										    String fkey = "jsp.search.filter."+searchFilter.getIndexFieldName();
+										    %><option value="<%= searchFilter.getIndexFieldName() %>"><fmt:message key="<%= fkey %>"/></option><%
+										}
+									%>
+								</select>
+							</td>
+						</tr>
+					</table>
+				</div>
+				
+				<div style="font-family: Arial, Helvetica, sans-serif; color: #9b9b9c; font-size: 12px; line-height: 150%; text-align: justify; " class="col-md-5">
+					<table style="border-collapse:separate; border-spacing:0 5px;">
+						<tbody>
+							<tr>
+							<td>
+								
+								<select class="form-control" id="filtertype" name="filtertype">
+									<%
+										for (String opt : options)
+										{
+										    String fkey = "jsp.search.filter.op."+opt;
+										    %><option value="<%= opt %>"><fmt:message key="<%= fkey %>"/></option><%
+										}
+									%>
+								</select>
+							</td>
+							<td>
+								<input type="text" id="filterquery" name="filterquery" size="45" required="required" class="form-control" />
+							</td>
+						</tr>
+						<tr>
+							<td align="right" colspan="2">
+								<input class="btn btn-default" type="submit" value="Adicionar filtro de busca" onclick="return validateFilters()" />
+							</td>
+						</tr>
+						</tbody>
+					</table>
+				</div>
 
 
 		<input type="hidden" value="<%= rpp %>" name="rpp" />
