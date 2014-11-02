@@ -16,6 +16,7 @@
 
 <%@ page contentType="text/html;charset=UTF-8"%>
 
+<%@page import="org.apache.commons.lang.StringUtils"%>
 <%@ page import="java.util.List"%>
 <%@ page import="java.util.Enumeration"%>
 <%@ page import="org.dspace.app.webui.util.JSPManager"%>
@@ -26,10 +27,13 @@
 <%@ page import="org.dspace.core.Context" %>
 <%@ page import="org.dspace.authorize.AuthorizeManager" %>
 <%@ page import="org.dspace.app.webui.util.UIUtil" %>
+<%@ page import="org.dspace.eperson.EPerson" %>
+
 
 
 
 <%
+	EPerson user = (EPerson) request.getAttribute("dspace.current.user");
     String title = (String) request.getAttribute("dspace.layout.title");
     String navbar = (String) request.getAttribute("dspace.layout.navbar");
     boolean locbar = ((Boolean) request.getAttribute("dspace.layout.locbar")).booleanValue();
@@ -48,6 +52,13 @@
     
     Context context = UIUtil.obtainContext(request);
     boolean isAdmin = AuthorizeManager.isAdmin(context);
+    
+    String navbarEmail = null;
+
+    if (user != null)
+    {
+        navbarEmail = user.getEmail();
+    }
 
 %>
 
@@ -255,9 +266,9 @@
 						<map id="ImageMapsCom-image-maps-2014-10-05-103938"
 							name="image-maps-2014-10-05-103938">
 							<area target="_self" style="outline: none;" coords="2,0,32,32"
-								shape="rect" href="#" title="" alt="">
+								shape="rect" href="http://twitter.com/participabr" title="" alt="">
 							<area target="_self" style="outline: none;" coords="39,0,73,33"
-								shape="rect" href="#" title="" alt="">
+								shape="rect" href="http://facebook.com/participabr" title="" alt="">
 							<area target="_self" style="outline: none;" coords="79,0,113,32"
 								shape="rect" href="#" title="" alt="">
 							<area target="_self" style="outline: none;" coords="119,0,151,32"
@@ -272,8 +283,20 @@
 				</div>
 
 				<div
-					style="height: 30px; background-color: #F8C300; width: 100%; max-width: 3000px"
-					id="sobre2">&nbsp;</div>
+					style="height: 30px; background-color: #F8C300; width: 100%; max-width: 3000px;padding-top: 10px;font-size: 12px;text-align: center;"
+					id="sobre2">
+					<%
+						if (user != null)
+					    {
+						%>
+							<span>Esta página está sendo acessada por: </span>
+							<span><b><%= StringUtils.abbreviate(navbarEmail, 40) %></b></span>
+							<span>&nbsp;<a class="logout-link" href="<%= request.getContextPath() %>/logout"><span class="glyphicon glyphicon-log-out"></span> <fmt:message key="jsp.layout.navbar-default.logout"/></a></span>
+					<%
+					    }
+					%>
+					
+				</div>
 
 				<div id="sobre">
 					<ul>
@@ -308,7 +331,9 @@
 			<!-- 
 			Fim: Banner do participa.br	
 		 	-->
-
+		
+           <dspace:include page="/layout/location-bar.jsp" />
+		
 
 
 			<!-- 

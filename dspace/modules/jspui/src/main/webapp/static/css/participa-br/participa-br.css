@@ -163,7 +163,6 @@ div#wrapper-barra-brasil {
 	padding: 5px 0;
 }
 
-
 .layout-participa #sobre a {
 	color: #00500f;
 	font-family: 'Open Sans', Arial, Helvetica, sans-serif;
@@ -291,7 +290,7 @@ div#wrapper-barra-brasil {
 }
 
 @media screen {
-	.layout-participa:not(input)  {
+	.layout-participa:not(input) {
 		margin: 0;
 		padding: 0;
 	}
@@ -3014,7 +3013,6 @@ div#wrapper-barra-brasil {
 }
 
 }
-
 .layout-participa:not(input) {
 	margin: 0;
 	padding: 0;
@@ -6078,12 +6076,12 @@ div#wrapper-barra-brasil {
 }
 
 /** Retira margem direita do primeiro item de menu **/
-#sobre ul li:FIRST-CHILD a{
+#sobre ul li:FIRST-CHILD a {
 	padding-left: 0px !important;
 }
 
 /** Retira margem esquerda do último item de menu **/
-#sobre ul li:last-child a{
+#sobre ul li:last-child a {
 	padding-right: 0px !important;
 }
 
@@ -6097,4 +6095,30 @@ h1, h2 {
 	padding: 0;
 	list-style: none;
 	vertical-align: middle;
+}
+
+.container-breadcrumb {
+	padding-left: 0px;
+}
+
+.breadcrumb-participa {
+	background-color: #FFFFFF;
+	font-size: 12px;
+	padding-left: 0px;
+	margin-bottom: 0px;
+	color: #777;
+	padding-top: 5px;
+}
+/** Estilo para "breadcrumb" **/
+.breadcrumb-participa>.active {
+	color: #777;
+}
+
+.breadcrumb-participa>li {
+	display: inline-block;
+}
+
+/** Modifica cor do link para logout **/
+.glyphicon-log-out, .logout-link {
+	color: white !important;
 }
