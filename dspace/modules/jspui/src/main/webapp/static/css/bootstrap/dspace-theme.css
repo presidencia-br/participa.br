@@ -64,3 +64,104 @@ input.ds-authority-lock.is-unlocked
 
 /* field required in submission */
 .label-required:after { content:" *"; }
+
+/** Modifica cor da barra de navegação **/
+.navbar-inverse {
+	background-image: linear-gradient(to bottom, #fbd930 0px, #ffd500 100%);
+}
+
+/** Modifica cores da barra de navegação **/
+.navbar-inverse .navbar-nav li a{
+	color: #626261;
+}
+
+/** Modifica cor das setas dropdown da barra de navegação. **/
+.navbar-inverse .navbar-nav > .dropdown > a .caret, .navbar-inverse .navbar-nav > .dropdown > a .caret:HOVER, .nav a:hover .caret {
+    border-bottom-color: #fff;
+    border-top-color: #fff;
+}
+
+/** Modifica cor de fundo para de evento "hover" do menu da barra de menus **/
+.dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus, .dropdown-menu > .active > a, .dropdown-menu > .active > a:hover, .dropdown-menu > .active > a:focus {
+    background-color: #ffd500;
+    background-image: linear-gradient(to bottom, #fbd930 0px, #d7bf43 100%);
+    background-repeat: repeat-x;
+}
+
+/** Modifica cor de fundo de botões da barra de navegação  **/
+.navbar-inverse .navbar-nav > .active > a {
+	background-color: #d7bf43;	
+}
+
+/** Modifica cor de fundo para de evento "hover" do menu da barra de navegação **/
+.navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:hover, .navbar-inverse .navbar-nav > .active > a:focus {
+    background-color: #ffd500;
+}
+
+/** Modifica codo de fundo de itens clicáveis da barra de navegação **/
+.navbar-inverse .navbar-nav > .open > a, .navbar-inverse .navbar-nav > .open > a:hover, .navbar-inverse .navbar-nav > .open > a:focus {
+    background-color: #ffd500;
+}
+
+/** Modifica cores dos cabeçalhos **/
+.panel-primary > .panel-heading {
+	color: black;
+	font-weight: bold;
+    background-image: linear-gradient(to bottom, #f8c218 0px, #e1b121 100%);
+    background-repeat: repeat-x;
+}
+
+/** Modifica cor da bora dos cabeçahos **/
+.panel-primary > .panel-heading {
+    background-color: #ffe698;
+    border-color: #ffe698;
+}
+
+.panel-primary {
+    border-color: #fff;
+}
+
+/** Modifica cor dos itens de paginação **/
+.panel-info > .panel-heading {
+    background-image: linear-gradient(to bottom, #ffed9b 0px, #f4e28c 100%);
+    background-repeat: repeat-x;
+    color: #626261;
+    border-color: #d2af0c;
+}
+
+.panel-info {
+    border-color: #d2af0c;
+}
+
+/** Modifica caixas de informação **/
+.alert-info {
+	background-image: linear-gradient(to bottom, #fbd930 0px, #ffd500 100%);
+	color: #626261;
+	border-color: #f8c218;
+}
+
+/** Modifica mensagem de alerta **/
+.alert-warning {
+	background-image: linear-gradient(to bottom, #e1b325 0px, #d4a516 100%);
+	color: #fff;
+	border-color: #f8c218;
+}
+
+/** Modifica cor do botão padrão **/
+.btn-success {
+    background-image: linear-gradient(to bottom, #214376 0px, #0f2e5b 100%);
+    background-repeat: repeat-x;
+    border-color: #214376;
+}
+
+/** Modifica cor do botão de alerta (geralmente cancelar) **/
+.btn-warning {
+    background-image: linear-gradient(to bottom, #d1d3d4 0px, #c5cccf 100%);
+    background-repeat: repeat-x;
+    border-color: #a8aaab;
+}
+
+
+a {
+    color: #102e5b;
+}
