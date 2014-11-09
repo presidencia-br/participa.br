@@ -161,6 +161,10 @@ input.ds-authority-lock.is-unlocked
     border-color: #a8aaab;
 }
 
+.well {
+    background-image: linear-gradient(to bottom, #fff5c8 0px, #fff4bf 100%);
+    border-color: #fbcf00;
+}
 
 a {
     color: #102e5b;

@@ -157,13 +157,9 @@
 							<area target="_self" style="outline: none;" coords="39,0,73,33"
 								shape="rect" href="http://facebook.com/participabr" title="" alt="">
 							<area target="_self" style="outline: none;" coords="79,0,113,32"
-								shape="rect" href="#" title="" alt="">
+								shape="rect" href="https://www.flickr.com/photos/110745331@N02/" title="" alt="">
 							<area target="_self" style="outline: none;" coords="119,0,151,32"
-								shape="rect" href="#" title="" alt="">
-							<area
-								href="http://www.image-maps.com/index.php?aff=mapped_users_0"
-								title="Image Map" style="outline: none;" alt="Image Map"
-								coords="149,31,151,33" shape="rect">
+								shape="rect" href="https://www.youtube.com/participabrasil" title="" alt="">
 						</map>
 					</div>
 
@@ -199,6 +195,10 @@
 							<li class="portalservicos-item"
 								id="portalservicos-fale-com-o-governo">
 								<a href="<%= request.getContextPath() %>/community-list">COMUNIDADES E COLEÇÕES</a></li>
+								
+							<li class="portalservicos-item"
+								id="portalservicos-fale-com-o-governo">
+								<a href="<%= request.getContextPath() %>/dspace-admin">FERRAMENTAS ADMINISTRATIVAS</a></li>
 						<% } %>
 							
 						<li class="portalservicos-item"
@@ -241,7 +241,7 @@
 								Busca contextualizada
 							 -->
 							 
-							
+							<%-- >
 							<input type="text"
 								style="font-family: Arial, Helvetica, sans-serif; font-size: 10px; color: #00316f"
 								id="nolivesearchGadget" class="searchField"
@@ -250,6 +250,7 @@
 								<input type="image" style="height: 13px" src="<%= request.getContextPath() %>/image/participa-br/search-button.gif">
 								&nbsp; 
 								<input type="button" value="Busca Avançada nas Comunidades" class="searchButton">
+							 --%>
 								
 						</div>
 					</div>

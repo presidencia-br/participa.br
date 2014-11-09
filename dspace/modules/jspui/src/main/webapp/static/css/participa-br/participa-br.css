@@ -6122,3 +6122,7 @@ h1, h2 {
 .glyphicon-log-out, .logout-link {
 	color: white !important;
 }
+
+.rodape {
+	z-index: 99999;
+}

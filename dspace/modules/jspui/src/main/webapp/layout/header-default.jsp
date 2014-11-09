@@ -52,7 +52,7 @@
     
     Context context = UIUtil.obtainContext(request);
     boolean isAdmin = AuthorizeManager.isAdmin(context);
-    boolean isAdminPage = navbar.equals("/layout/navbar-admin.jsp");
+    boolean isDiffNavBar = navbar.equals("/layout/navbar-admin.jsp") || navbar.equals("/layout/navbar-minimal.jsp") || navbar.equals("off");
     
     String navbarEmail = null;
 
@@ -170,19 +170,19 @@
     <%-- HACK: marginwidth, marginheight: for non-CSS compliant Netscape browser --%>
     <body>
 <a class="sr-only" href="#content">Skip navigation</a>
-<% if(isAdminPage) { %>
+<% if(isDiffNavBar) { %>
 <header class="navbar navbar-inverse navbar-fixed-top">    
 <% } %>
     <%
     if (!navbar.equals("off"))
     {
 %>	
-	<% if(isAdminPage) { %>
+	<% if(isDiffNavBar) { %>
 		<div class="container">
 	<% } %>
        	<dspace:include page="<%= navbar %>" />
             
-    <% if(isAdminPage) { %>
+    <% if(isDiffNavBar) { %>
       </div>
     <% } %>
 <%
@@ -200,14 +200,21 @@
 </header>
 <% } %>
 
+<% if(isDiffNavBar) { %>
+<br/>
+<br/>
+<br/>
+<br/>
+<% } %>
+
 <main id="content" role="main">
                 <%-- Location bar --%>
 <%
-    if (isAdminPage)
+    if (isDiffNavBar)
     {
 %>
 <div class="container">
-                <dspace:include page="/layout/location-bar.jsp" />
+               <dspace:include page="/layout/location-bar.jsp" />
 </div>                
 <%
     }
