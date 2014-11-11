@@ -4,18 +4,17 @@
 # {1}  Name of collection
 # {2}  handle 
 #
-Subject: DSpace: Submission Approved and Archived 
+Assunto: Submissão Aprovada e Arquivada 
 
-You submitted: {0}
+Você submeteu: {0} 
+Para coleção: {1} 
 
-To collection: {1}
+Sua submissão foi aceita e arquivada Biblioteca Digital de Participação Social, para a qual foi atribuído o seguinte identificador: 
 
-Your submission has been accepted and archived in DSpace,
-and it has been assigned the following identifier:
-{2}
+{2} 
 
-Please use this identifier when citing your submission.
+Utilize este identificador para citar sua submissão. 
 
-Many thanks!
+Muito obrigada! 
 
-DSpace
+Equipe da Biblioteca Digital de Participação Social

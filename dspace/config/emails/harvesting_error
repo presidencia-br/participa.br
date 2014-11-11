@@ -8,13 +8,12 @@
 #
 # See org.dspace.core.Email for information on the format of this file.
 #
-Subject: DSpace: Harvesting Error
-Collection {0} failed on harvest:
+Assunto:Biblioteca Digital de Participação Social: Erro na coleta automática 
 
-Date:       	{1}
-Status Flag: 	{2}
+Coleção {0} falhou na coleta automática 
 
-{3}
+Data: {1} 
+Status: {2} {3} 
+exceção: {4}
 
-Exception:
-{4}
+A Equipe da Biblioteca Digital de Participação Social

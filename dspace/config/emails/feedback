@@ -10,17 +10,14 @@
 #
 # See org.dspace.core.Email for information on the format of this file.
 #
-Subject: Feedback Form Information
+Assunto: Formulário Informações de Feedback 
 
-Comments:
-
-{6}
-
-
-Date: {0}
+Comentários: {6} 
+Data: {0}
 Email: {1}
-Logged In As: {2}
-Referring Page: {3}
-User Agent: {4}
-Session: {5}
+Identificado como: {2}
+Página: {3} 
+Usuário: {4} 
+Sessão: {5}
 
+A Equipe da Biblioteca Digital de Participação Social

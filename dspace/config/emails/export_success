@@ -5,14 +5,14 @@
 #
 # See org.dspace.core.Email for information on the format of this file.
 #
-Subject: DSpace - Item export requested is ready for download
-The item export you requested from the repository is now ready for download.
+Assunto: E-mail enviado aos usuários da Biblioteca Digital de Participação Social sobre êxito na exportação de um item ou coleção. 
+A exportação do item solicitado a partir da Biblioteca Digital de Participação Social está pronto para download. 
 
-You may download the compressed file using the following link:
-{0}
+Você pode fazer o download do arquivo compactado usando o seguinte link: 
 
-This file will remain available for at least {1} hours.  
+{0} 
+
+Este arquivo ficará disponível por menos {1} horas. 
 
 
-The DSpace Team
-
+A Equipe da Biblioteca Digital de Participação Social
